@@ -4,7 +4,7 @@
 /* 1) Создать переменную numberOfFilms и в неё поместить ответ от пользователя на вопрос:
 'Сколько фильмов вы уже посмотрели?' */
 
-let numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', '');
+let numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 console.log(numberOfFilms);
 
 /* 2) Создать объект personalMovieDB и в него поместить такие свойства:
@@ -14,13 +14,14 @@ console.log(numberOfFilms);
     - genres - сюда поместить пустой массив
     - privat - в это свойство поместить boolean(логическое) значение false */
 
-    const  personalMovieDB = {
-        count: numberOfFilms,
-        movies: {},
-        actors:{},
-        genres:[],
-        privat:false
-    }
+
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
+}
 
 /* 3) Задайте пользователю по два раза вопросы:
     - 'Один из последних просмотренных фильмов?'
@@ -33,17 +34,17 @@ console.log(numberOfFilms);
 
 Проверить, чтобы все работало без ошибок в консоли */
 
-let a = prompt('Один из последних просмотренных фильмов?');
-let b= prompt('На сколько оцените его?'),
-c= prompt('Один из последних просмотренных фильмов?'),
-d= prompt('На сколько оцените его?');
+/*let a = prompt('Один из последних просмотренных фильмов?');
+let b = prompt('На сколько оцените его?'),
+    c = prompt('Один из последних просмотренных фильмов?'),
+    d = prompt('На сколько оцените его?');
 
 
 
 
 personalMovieDB.movies[a] = b;
 personalMovieDB.movies[c] = d;
-console.log(personalMovieDB);
+console.log(personalMovieDB); */
 
 /* Задание на урок:
 
@@ -62,3 +63,62 @@ console.log(personalMovieDB);
 
 // Код возьмите из предыдущего домашнего задания
 
+/* for (let i = 0; i < 2; i++) {
+    let a = prompt('Один из последних просмотренных фильмов?'),
+        b = prompt('На сколько оцените его?');
+
+    if (a != '' && a.length < 50 && b != '' && a != null && b != null) {
+        personalMovieDB.movies[a] = b;
+        console.log('done');
+    }
+    else {
+        console.log('error')
+        i--;
+    }
+
+
+
+
+
+    let count = +personalMovieDB.count;
+    if (count < 10) {
+        console.log("Просмотрено довольно мало фильмов");
+    } else if (count >= 10 && count < 30) {
+        console.log("Вы классический зритель");
+    } else if (count > 30) {
+        console.log("Вы киноман");
+    } else {
+        console.log("Произошла ошибка");
+    }
+} */
+
+
+let i = 0;
+while (i < 2){
+    let a = prompt('Один из последних просмотренных фильмов?'),
+        b = prompt('На сколько оцените его?');
+    
+        if (a != '' && a.length < 50 && b != '' && a != null && b != null) {
+            personalMovieDB.movies[a] = b;
+            console.log('done');
+        }
+        else {
+            console.log('error')
+            i--;
+        }
+       
+        let count = +personalMovieDB.count;
+        if (count < 10) {
+            console.log("Просмотрено довольно мало фильмов");
+        } else if (count >= 10 && count < 30) {
+            console.log("Вы классический зритель");
+        } else if (count > 30) {
+            console.log("Вы киноман");
+        } else {
+            console.log("Произошла ошибка");
+        }
+    
+    i++;
+    
+}
+console.log(personalMovieDB);
